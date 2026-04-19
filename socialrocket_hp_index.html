@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SocialRocket | TikTok ShopクリエイターMCN</title>
+<meta name="description" content="SocialRocketは、TikTok Shopクリエイターの「好き」を仕事にするコマースクリエイターMCN。ブランドとクリエイターをつなぎ、新しいコマース体験を創ります。">
+<meta property="og:title" content="SocialRocket | TikTok ShopクリエイターMCN">
+<meta property="og:description" content="TikTok Shopクリエイターの「好き」を仕事に。話題のブランドと組んで自由にPR、報酬を獲得。">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Zen+Maru+Gothic:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --brand-purple: #5B3FF5;
+    --brand-purple-dark: #3E24D4;
+    --brand-purple-light: #8A74FF;
+    --brand-mint: #A8E6CF;
+    --brand-peach: #FFB4A2;
+    --brand-yellow: #FFD93D;
+    --brand-pink: #FF6B9D;
+    --bg-cream: #FFF8F0;
+    --bg-lavender: #F0ECFF;
+    --text-dark: #2B1B5C;
+    --text-medium: #5B4B8A;
+    --white: #FFFFFF;
+    --shadow-brand: 6px 6px 0px #2B1B5C;
+    --shadow-brand-sm: 4px 4px 0px #2B1B5C;
+    --shadow-brand-lg: 10px 10px 0px #2B1B5C;
+    --border-dark: 3px solid #2B1B5C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    background: var(--bg-cream);
+    background-image:
+      radial-gradient(circle at 10% 20%, rgba(91, 63, 245, 0.06) 0%, transparent 40%),
+      radial-gradient(circle at 90% 80%, rgba(255, 107, 157, 0.06) 0%, transparent 40%);
+    color: var(--text-dark);
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ============== NAV ============== */
+  .nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 248, 240, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 2.5px solid var(--text-dark);
+    z-index: 100;
+    padding: 14px 24px;
+  }
+
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--brand-purple);
+    text-decoration: none;
+  }
+
+  .nav-mascot { width: 32px; height: 32px; }
+
+  .nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
+
+  .nav-link {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: color 0.2s;
+  }
+  .nav-link:hover { color: var(--brand-purple); }
+
+  .nav-cta {
+    background: var(--brand-purple);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: 2.5px solid var(--text-dark);
+    box-shadow: 3px 3px 0px var(--text-dark);
+    font-weight: 900;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .nav-cta:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--text-dark);
+  }
+
+  @media (max-width: 760px) {
+    .nav-links { display: none; }
+    .nav-cta { display: inline-block; }
+  }
+
+  /* ============== SECTIONS ============== */
+  section { padding: 80px 24px; position: relative; }
+  .container { max-width: 1100px; margin: 0 auto; }
+
+  .section-label {
+    display: inline-block;
+    background: var(--brand-yellow);
+    color: var(--text-dark);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 2px solid var(--text-dark);
+    margin-bottom: 16px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 16px;
+  }
+
+  .section-sub {
+    font-size: 1rem;
+    color: var(--text-medium);
+    max-width: 600px;
+  }
+
+  /* ============== HERO ============== */
+  .hero {
+    padding: 60px 24px 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-deco {
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+    animation: float 6s ease-in-out infinite;
+  }
+  .hero-deco.d1 { top: 10%; left: 5%; animation-delay: 0s; }
+  .hero-deco.d2 { top: 20%; right: 7%; animation-delay: 1.5s; }
+  .hero-deco.d3 { bottom: 10%; left: 10%; animation-delay: 3s; }
+  .hero-deco.d4 { bottom: 20%; right: 5%; animation-delay: 4.5s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(15deg); }
+  }
+
+  .hero-mascot-wrap {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: 24px;
+  }
+
+  .hero-mascot {
+    width: 120px;
+    height: 120px;
+    animation: bounce 2s ease-in-out infinite;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .hero-tagline {
+    display: inline-block;
+    background: var(--white);
+    border: 2.5px solid var(--text-dark);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: var(--brand-purple-dark);
+    margin-bottom: 20px;
+    box-shadow: 3px 3px 0px var(--text-dark);
+    position: relative; z-index: 2;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    font-weight: 900;
+    line-height: 1.2;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+    position: relative; z-index: 2;
+  }
+
+  .hero h1 .highlight {
+    background: linear-gradient(120deg, transparent 60%, var(--brand-yellow) 60%);
+    padding: 0 4px;
+  }
+
+  .hero h1 .accent {
+    color: var(--brand-purple);
+  }
+
+  .hero-desc {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-medium);
+    max-width: 640px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    position: relative; z-index: 2;
+  }
+
+  /* ============== HERO DUAL CTA ============== */
+  .dual-cta {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    max-width: 720px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+  }
+
+  @media (max-width: 640px) {
+    .dual-cta { grid-template-columns: 1fr; }
+  }
+
+  .cta-card {
+    background: var(--white);
+    border: var(--border-dark);
+    border-radius: 24px;
+    padding: 28px 24px;
+    text-align: left;
+    box-shadow: var(--shadow-brand);
+    transition: all 0.2s;
+    text-decoration: none;
+    color: var(--text-dark);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-brand-lg);
+  }
+
+  .cta-card.creator {
+    background: linear-gradient(135deg, #F0ECFF 0%, #FFFFFF 100%);
+  }
+
+  .cta-card.brand {
+    background: linear-gradient(135deg, #FFF1E6 0%, #FFFFFF 100%);
+  }
+
+  .cta-card-icon {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+  }
+
+  .cta-card-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 6px;
+  }
+
+  .cta-card-desc {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  .cta-card-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--brand-purple);
+    color: var(--white);
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    border: 2.5px solid var(--text-dark);
+  }
+
+  .cta-card.brand .cta-card-btn {
+    background: #FF9F43;
+  }
+
+  /* ============== ABOUT ============== */
+  .about {
+    background: var(--white);
+    border-top: var(--border-dark);
+    border-bottom: var(--border-dark);
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+
+  @media (max-width: 760px) {
+    .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  }
+
+  .about-visual {
+    background: var(--bg-lavender);
+    border: var(--border-dark);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-brand);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .about-visual::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 100px; height: 100px;
+    background: var(--brand-yellow);
+    border-radius: 50%;
+    opacity: 0.4;
+  }
+
+  .about-visual-mascot {
+    width: 140px;
+    height: 140px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .about-visual-text {
+    margin-top: 20px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 1.4rem;
+    color: var(--brand-purple-dark);
+    font-weight: 700;
+    position: relative; z-index: 2;
+  }
+
+  /* ============== STATS ============== */
+  .stats {
+    background: var(--text-dark);
+    color: var(--white);
+    text-align: center;
+  }
+
+  .stats .section-label {
+    background: var(--brand-yellow);
+  }
+
+  .stats .section-title {
+    color: var(--white);
+  }
+
+  .stats .section-sub {
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0 auto 48px;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  @media (max-width: 760px) {
+    .stats-grid { grid-template-columns: 1fr; gap: 20px; }
+  }
+
+  .stat-card {
+    background: var(--white);
+    color: var(--text-dark);
+    border-radius: 24px;
+    padding: 36px 24px;
+    box-shadow: var(--shadow-brand);
+    border: var(--border-dark);
+    transition: transform 0.2s;
+  }
+
+  .stat-card:hover { transform: translateY(-6px); }
+
+  .stat-number {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    color: var(--brand-purple);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .stat-suffix {
+    font-size: 0.6em;
+    color: var(--brand-pink);
+  }
+
+  .stat-label {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+  }
+
+  .stat-desc {
+    font-size: 0.8rem;
+    color: var(--text-medium);
+    margin-top: 6px;
+  }
+
+  /* ============== MERIT TABS ============== */
+  .merit {
+    background: var(--bg-cream);
+  }
+
+  .merit-tabs {
+    display: flex;
+    gap: 8px;
+    margin: 32px 0 24px;
+    flex-wrap: wrap;
+  }
+
+  .merit-tab {
+    background: var(--white);
+    border: 2.5px solid var(--text-dark);
+    color: var(--text-dark);
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 900;
+    font-size: 0.95rem;
+    cursor: pointer;
+    box-shadow: 3px 3px 0px var(--text-dark);
+    font-family: inherit;
+    transition: all 0.15s;
+  }
+
+  .merit-tab:hover {
+    transform: translate(-1px, -1px);
+    box-shadow: 4px 4px 0px var(--text-dark);
+  }
+
+  .merit-tab.active {
+    background: var(--brand-purple);
+    color: var(--white);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--text-dark);
+  }
+
+  .merit-content { display: none; }
+  .merit-content.active { display: block; }
+
+  .merit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 24px;
+  }
+
+  .merit-card {
+    background: var(--white);
+    border: var(--border-dark);
+    border-radius: 20px;
+    padding: 24px;
+    box-shadow: var(--shadow-brand-sm);
+    transition: all 0.2s;
+  }
+
+  .merit-card:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: var(--shadow-brand);
+  }
+
+  .merit-card-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--bg-lavender);
+    border: 2.5px solid var(--text-dark);
+    border-radius: 50%;
+    font-size: 1.6rem;
+    margin-bottom: 14px;
+  }
+
+  .merit-card.brand-card .merit-card-icon {
+    background: #FFE8C7;
+  }
+
+  .merit-card-title {
+    font-size: 1.05rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+
+  .merit-card-desc {
+    font-size: 0.88rem;
+    color: var(--text-medium);
+    line-height: 1.7;
+  }
+
+  /* ============== BRANDS ============== */
+  .brands {
+    background: var(--white);
+    border-top: var(--border-dark);
+    border-bottom: var(--border-dark);
+  }
+
+  .brands-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  .brand-card-item {
+    background: var(--bg-cream);
+    border: 2.5px solid var(--text-dark);
+    border-radius: 16px;
+    padding: 24px 16px;
+    text-align: center;
+    box-shadow: 3px 3px 0px var(--text-dark);
+    transition: all 0.2s;
+  }
+
+  .brand-card-item:hover {
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0px var(--text-dark);
+    background: var(--bg-lavender);
+  }
+
+  .brand-name {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+  }
+
+  .brand-tag {
+    font-size: 0.75rem;
+    color: var(--text-medium);
+    font-weight: 700;
+  }
+
+  .brands-note {
+    text-align: center;
+    margin-top: 24px;
+    font-size: 0.85rem;
+    color: var(--text-medium);
+  }
+
+  /* ============== FLOW ============== */
+  .flow {
+    background: var(--bg-cream);
+  }
+
+  .flow-stage {
+    margin-top: 40px;
+  }
+
+  .flow-stage-header {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .flow-stage-badge {
+    display: inline-block;
+    background: var(--brand-purple);
+    color: var(--white);
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    padding: 4px 14px;
+    border-radius: 999px;
+    border: 2px solid var(--text-dark);
+    margin-bottom: 12px;
+    letter-spacing: 0.05em;
+  }
+
+  .flow-stage-badge.stage-2-badge {
+    background: var(--brand-pink);
+  }
+
+  .flow-stage-title {
+    font-size: clamp(1.3rem, 3vw, 1.7rem);
+    font-weight: 900;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+  }
+
+  .flow-stage-sub {
+    font-size: 0.9rem;
+    color: var(--text-medium);
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .flow-connector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    margin: 32px auto;
+    max-width: 600px;
+  }
+
+  .flow-connector-line {
+    flex: 1;
+    height: 3px;
+    background: repeating-linear-gradient(90deg, var(--text-dark) 0 8px, transparent 8px 16px);
+  }
+
+  .flow-connector-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    background: var(--brand-yellow);
+    color: var(--text-dark);
+    border: var(--border-dark);
+    border-radius: 50%;
+    font-size: 1.6rem;
+    font-weight: 900;
+    box-shadow: var(--shadow-brand-sm);
+    flex-shrink: 0;
+  }
+
+  .flow-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-top: 40px;
+    position: relative;
+  }
+
+  @media (max-width: 760px) {
+    .flow-steps { grid-template-columns: 1fr 1fr; gap: 14px; }
+  }
+
+  @media (max-width: 460px) {
+    .flow-steps { grid-template-columns: 1fr; }
+  }
+
+  .flow-step {
+    background: var(--white);
+    border: var(--border-dark);
+    border-radius: 20px;
+    padding: 28px 20px;
+    box-shadow: var(--shadow-brand-sm);
+    position: relative;
+  }
+
+  .flow-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background: var(--brand-purple);
+    color: var(--white);
+    border: 2.5px solid var(--text-dark);
+    border-radius: 50%;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin-bottom: 14px;
+    box-shadow: 3px 3px 0px var(--text-dark);
+  }
+
+  .flow-step:nth-child(2) .flow-step-num { background: var(--brand-pink); }
+  .flow-step:nth-child(3) .flow-step-num { background: var(--brand-yellow); color: var(--text-dark); }
+  .flow-step:nth-child(4) .flow-step-num { background: #4CAF8E; }
+
+  .stage-2 .flow-step:nth-child(1) .flow-step-num { background: var(--brand-pink); }
+  .stage-2 .flow-step:nth-child(2) .flow-step-num { background: var(--brand-yellow); color: var(--text-dark); }
+  .stage-2 .flow-step:nth-child(3) .flow-step-num { background: #4CAF8E; }
+  .stage-2 .flow-step:nth-child(4) .flow-step-num { background: var(--brand-purple); }
+
+  .flow-step-title {
+    font-size: 1.05rem;
+    font-weight: 900;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+  }
+
+  .flow-step-desc {
+    font-size: 0.85rem;
+    color: var(--text-medium);
+    line-height: 1.6;
+  }
+
+  /* ============== FAQ ============== */
+  .faq {
+    background: var(--white);
+    border-top: var(--border-dark);
+  }
+
+  .faq-list {
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .faq-item {
+    background: var(--white);
+    border: 2.5px solid var(--text-dark);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-brand-sm);
+  }
+
+  .faq-question {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 22px;
+    cursor: pointer;
+    font-weight: 900;
+    color: var(--text-dark);
+    font-size: 1rem;
+    list-style: none;
+    user-select: none;
+  }
+
+  .faq-question::-webkit-details-marker { display: none; }
+
+  .faq-q-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background: var(--brand-purple);
+    color: var(--white);
+    border-radius: 50%;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .faq-q-text {
+    flex: 1;
+    line-height: 1.4;
+  }
+
+  .faq-arrow {
+    color: var(--brand-purple);
+    font-size: 0.9rem;
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+
+  details[open] .faq-arrow { transform: rotate(180deg); }
+
+  .faq-answer {
+    padding: 0 22px 20px 68px;
+    font-size: 0.92rem;
+    color: var(--text-medium);
+    line-height: 1.8;
+    border-top: 2px dashed var(--bg-lavender);
+    padding-top: 16px;
+  }
+
+  /* ============== FINAL CTA ============== */
+  .final-cta {
+    background: var(--brand-purple);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    top: -100px; left: -100px;
+    width: 250px; height: 250px;
+    background: var(--brand-yellow);
+    border-radius: 50%;
+    opacity: 0.2;
+  }
+
+  .final-cta::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; right: -80px;
+    width: 200px; height: 200px;
+    background: var(--brand-pink);
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+
+  .final-cta-content {
+    position: relative;
+    z-index: 2;
+  }
+
+  .final-cta h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 900;
+    margin-bottom: 16px;
+    color: var(--white);
+  }
+
+  .final-cta p {
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 36px;
+  }
+
+  .final-cta-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .final-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 32px;
+    border-radius: 999px;
+    font-weight: 900;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2.5px solid var(--text-dark);
+    box-shadow: var(--shadow-brand-sm);
+    transition: all 0.2s;
+  }
+
+  .final-btn:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: var(--shadow-brand);
+  }
+
+  .final-btn.primary {
+    background: var(--brand-yellow);
+    color: var(--text-dark);
+  }
+
+  .final-btn.secondary {
+    background: var(--white);
+    color: var(--text-dark);
+  }
+
+  /* ============== FOOTER ============== */
+  .footer {
+    background: var(--text-dark);
+    color: rgba(255, 255, 255, 0.7);
+    padding: 48px 24px 32px;
+    text-align: center;
+  }
+
+  .footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--white);
+    margin-bottom: 16px;
+  }
+
+  .footer-info {
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+  }
+
+  .footer-info strong { color: var(--white); }
+
+  .footer-links {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+  }
+
+  .footer-link {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: color 0.2s;
+  }
+  .footer-link:hover { color: var(--brand-yellow); }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  /* Reveal animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- ============== NAV ============== -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg class="nav-mascot" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 40 8 Q 32 4 28 10 Q 34 14 40 14 Q 46 14 52 10 Q 48 4 40 8 Z" fill="#6BCF7F" stroke="#2B1B5C" stroke-width="2"/>
+        <circle cx="40" cy="44" r="26" fill="#5B3FF5" stroke="#2B1B5C" stroke-width="2.5"/>
+        <circle cx="33" cy="42" r="5" fill="white" stroke="#2B1B5C" stroke-width="1.5"/>
+        <circle cx="47" cy="42" r="5" fill="white" stroke="#2B1B5C" stroke-width="1.5"/>
+        <circle cx="34" cy="43" r="2.2" fill="#2B1B5C"/>
+        <circle cx="48" cy="43" r="2.2" fill="#2B1B5C"/>
+        <path d="M 36 52 Q 40 56 44 52" stroke="#2B1B5C" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+      SocialRocket
+    </a>
+    <div class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#merit" class="nav-link">メリット</a>
+      <a href="#brands" class="nav-link">提携ブランド</a>
+      <a href="#flow" class="nav-link">参加の流れ</a>
+      <a href="#faq" class="nav-link">FAQ</a>
+      <a href="https://tikseek-inc.github.io/socialrocket-form/" class="nav-cta" target="_blank">🚀 応募する</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============== HERO ============== -->
+<section class="hero">
+  <svg class="hero-deco d1" width="50" height="50" viewBox="0 0 40 40">
+    <path d="M20 2 L24 16 L38 20 L24 24 L20 38 L16 24 L2 20 L16 16 Z" fill="#FFD93D" stroke="#2B1B5C" stroke-width="2.5" stroke-linejoin="round"/>
+  </svg>
+  <svg class="hero-deco d2" width="40" height="40" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="15" fill="#FF6B9D" stroke="#2B1B5C" stroke-width="2.5"/>
+  </svg>
+  <svg class="hero-deco d3" width="44" height="44" viewBox="0 0 40 40">
+    <path d="M20 2 L24 16 L38 20 L24 24 L20 38 L16 24 L2 20 L16 16 Z" fill="#A8E6CF" stroke="#2B1B5C" stroke-width="2.5" stroke-linejoin="round"/>
+  </svg>
+  <svg class="hero-deco d4" width="36" height="36" viewBox="0 0 40 40">
+    <circle cx="20" cy="20" r="15" fill="#5B3FF5" stroke="#2B1B5C" stroke-width="2.5"/>
+  </svg>
+
+  <div class="container">
+    <div class="hero-mascot-wrap">
+      <svg class="hero-mascot" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+        <path d="M 40 8 Q 32 4 28 10 Q 34 14 40 14 Q 46 14 52 10 Q 48 4 40 8 Z" fill="#6BCF7F" stroke="#2B1B5C" stroke-width="2"/>
+        <circle cx="40" cy="44" r="26" fill="#5B3FF5" stroke="#2B1B5C" stroke-width="2.5"/>
+        <circle cx="30" cy="38" r="5" fill="#7A5FF7" opacity="0.6"/>
+        <circle cx="48" cy="36" r="4" fill="#7A5FF7" opacity="0.6"/>
+        <circle cx="52" cy="52" r="5" fill="#7A5FF7" opacity="0.6"/>
+        <circle cx="32" cy="54" r="4" fill="#7A5FF7" opacity="0.6"/>
+        <circle cx="33" cy="42" r="5" fill="white" stroke="#2B1B5C" stroke-width="1.5"/>
+        <circle cx="47" cy="42" r="5" fill="white" stroke="#2B1B5C" stroke-width="1.5"/>
+        <circle cx="34" cy="43" r="2.2" fill="#2B1B5C"/>
+        <circle cx="48" cy="43" r="2.2" fill="#2B1B5C"/>
+        <circle cx="34.8" cy="42" r="0.8" fill="white"/>
+        <circle cx="48.8" cy="42" r="0.8" fill="white"/>
+        <circle cx="26" cy="50" r="2.5" fill="#FF6B9D" opacity="0.7"/>
+        <circle cx="54" cy="50" r="2.5" fill="#FF6B9D" opacity="0.7"/>
+        <path d="M 36 52 Q 40 56 44 52" stroke="#2B1B5C" stroke-width="2" fill="none" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <div class="hero-tagline">🚀 TikTok ShopクリエイターMCN</div>
+
+    <h1>
+      「<span class="highlight">好き</span>」を<span class="accent">仕事</span>にする<br>
+      新しいコマースの形へ
+    </h1>
+
+    <p class="hero-desc">
+      SocialRocketは、TikTok Shopクリエイターと話題のブランドをつなぐ<br>
+      コマースクリエイターMCN。<br>
+      自由にPRして報酬を獲得できる、新しい発信の場をご提供します。
+    </p>
+
+    <div class="dual-cta">
+      <a href="https://tikseek-inc.github.io/socialrocket-form/" class="cta-card creator" target="_blank">
+        <div class="cta-card-icon">👤</div>
+        <div class="cta-card-title">クリエイターの方</div>
+        <div class="cta-card-desc">話題の限定商品を無料で試して、紹介して、報酬をゲット✨</div>
+        <span class="cta-card-btn">応募フォームへ →</span>
+      </a>
+      <a href="#contact" class="cta-card brand">
+        <div class="cta-card-icon">🏢</div>
+        <div class="cta-card-title">ブランドの方</div>
+        <div class="cta-card-desc">TikTok Shopでの売上UPを、優秀クリエイターと共に。</div>
+        <span class="cta-card-btn">お問い合わせ →</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== ABOUT ============== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="reveal">
+        <span class="section-label">ABOUT</span>
+        <h2 class="section-title">SocialRocketとは?</h2>
+        <p style="margin-bottom: 16px; color: var(--text-medium); line-height: 1.9;">
+          <strong style="color: var(--text-dark);">SocialRocket</strong>は、株式会社TikSeekが運営する<strong style="color: var(--brand-purple-dark);">TikTok ShopクリエイターMCN</strong>。
+        </p>
+        <p style="margin-bottom: 16px; color: var(--text-medium); line-height: 1.9;">
+          話題のブランドと選ばれたクリエイターをマッチングし、<br>
+          双方にとって持続可能なコマース体験を創造します。
+        </p>
+        <p style="color: var(--text-medium); line-height: 1.9;">
+          単なる「PR案件」ではなく、ブランドの世界観を理解した<br>
+          クリエイターによる<strong style="color: var(--text-dark);">本質的な発信</strong>で、<br>
+          TikTok Shopエコシステムの成長を加速させます🚀
+        </p>
+      </div>
+      <div class="about-visual reveal">
+        <svg class="about-visual-mascot" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+          <path d="M 40 8 Q 32 4 28 10 Q 34 14 40 14 Q 46 14 52 10 Q 48 4 40 8 Z" fill="#6BCF7F" stroke="#2B1B5C" stroke-width="2"/>
+          <circle cx="40" cy="44" r="26" fill="#5B3FF5" stroke="#2B1B5C" stroke-width="2.5"/>
+          <circle cx="30" cy="38" r="5" fill="#7A5FF7" opacity="0.6"/>
+          <circle cx="48" cy="36" r="4" fill="#7A5FF7" opacity="0.6"/>
+          <circle cx="33" cy="42" r="5" fill="white" stroke="#2B1B5C" stroke-width="1.5"/>
+          <circle cx="47" cy="42" r="5" fill="white" stroke="#2B1B5C" stroke-width="1.5"/>
+          <circle cx="34" cy="43" r="2.2" fill="#2B1B5C"/>
+          <circle cx="48" cy="43" r="2.2" fill="#2B1B5C"/>
+          <circle cx="26" cy="50" r="2.5" fill="#FF6B9D" opacity="0.7"/>
+          <circle cx="54" cy="50" r="2.5" fill="#FF6B9D" opacity="0.7"/>
+          <path d="M 36 52 Q 40 56 44 52" stroke="#2B1B5C" stroke-width="2" fill="none" stroke-linecap="round"/>
+        </svg>
+        <div class="about-visual-text">Let's Rocket! 🚀</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== STATS ============== -->
+<section class="stats">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <span class="section-label">NUMBERS</span>
+      <h2 class="section-title">数字で見るSocialRocket</h2>
+      <p class="section-sub">急成長中のクリエイターコミュニティ。あなたも一緒に。</p>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-card reveal">
+        <div class="stat-number" data-target="10"><span class="stat-counter">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">提携ブランド</div>
+        <div class="stat-desc">業界トップクラスのD2Cブランドが参画</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-number" data-target="50"><span class="stat-counter">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">取扱商品数</div>
+        <div class="stat-desc">美容・ヘルスケア・ガジェットなど多ジャンル</div>
+      </div>
+      <div class="stat-card reveal">
+        <div class="stat-number" data-target="100"><span class="stat-counter">0</span><span class="stat-suffix">+</span></div>
+        <div class="stat-label">所属クリエイター</div>
+        <div class="stat-desc">フォロワー1,000人〜10万人以上が活躍中</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== MERIT ============== -->
+<section class="merit" id="merit">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">MERIT</span>
+      <h2 class="section-title">参加するメリット</h2>
+      <p class="section-sub">クリエイターとブランド、それぞれにとっての価値をご紹介します。</p>
+    </div>
+
+    <div class="merit-tabs">
+      <button class="merit-tab active" data-tab="creator">👤 クリエイターの方へ</button>
+      <button class="merit-tab" data-tab="brand">🏢 ブランドの方へ</button>
+    </div>
+
+    <div class="merit-content active" data-content="creator">
+      <div class="merit-grid">
+        <div class="merit-card">
+          <div class="merit-card-icon">🎁</div>
+          <div class="merit-card-title">話題の商品を無料提供</div>
+          <div class="merit-card-desc">提携ブランドの厳選アイテムを、無料でお試しいただけます。実際に使った感想を発信できる。</div>
+        </div>
+        <div class="merit-card">
+          <div class="merit-card-icon">💰</div>
+          <div class="merit-card-title">業界水準の成果報酬</div>
+          <div class="merit-card-desc">SocialRocket経由限定の好条件。販売実績に応じて、明確な報酬体系で収益化。</div>
+        </div>
+        <div class="merit-card">
+          <div class="merit-card-icon">🤝</div>
+          <div class="merit-card-title">ブランドと直接コラボ</div>
+          <div class="merit-card-desc">中間マージンを最小化。ブランドと直接つながることで、より良い条件と関係性を構築。</div>
+        </div>
+        <div class="merit-card">
+          <div class="merit-card-icon">📈</div>
+          <div class="merit-card-title">運営による成長サポート</div>
+          <div class="merit-card-desc">商材理解・訴求設計・規約遵守まで、運営チームが伴走。安心して発信に集中できる。</div>
+        </div>
+        <div class="merit-card">
+          <div class="merit-card-icon">🔒</div>
+          <div class="merit-card-title">限定情報へのアクセス</div>
+          <div class="merit-card-desc">一般非公開の新商品情報や、コミュニティ限定の案件情報をいち早くキャッチ。</div>
+        </div>
+        <div class="merit-card">
+          <div class="merit-card-icon">🌟</div>
+          <div class="merit-card-title">フォロワー数問わず参加可能</div>
+          <div class="merit-card-desc">1,000人〜10万人超まで、幅広いフェーズのクリエイターが活躍中。実力で評価されます。</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="merit-content" data-content="brand">
+      <div class="merit-grid">
+        <div class="merit-card brand-card">
+          <div class="merit-card-icon">🎯</div>
+          <div class="merit-card-title">厳選クリエイターと連携</div>
+          <div class="merit-card-desc">ブランドの世界観を理解する、本物の発信力を持つクリエイターのみとマッチング。</div>
+        </div>
+        <div class="merit-card brand-card">
+          <div class="merit-card-icon">📊</div>
+          <div class="merit-card-title">データドリブンな運用</div>
+          <div class="merit-card-desc">GMV・CVR・視聴維持率など、定量的な実績データに基づく改善を継続。</div>
+        </div>
+        <div class="merit-card brand-card">
+          <div class="merit-card-icon">⚡</div>
+          <div class="merit-card-title">スピーディーな案件展開</div>
+          <div class="merit-card-desc">複数クリエイターへの一括展開と、迅速な施策実行で、機会損失を最小化。</div>
+        </div>
+        <div class="merit-card brand-card">
+          <div class="merit-card-icon">🛡️</div>
+          <div class="merit-card-title">コンプライアンス管理</div>
+          <div class="merit-card-desc">薬機法・景表法・プラットフォーム規約の遵守を徹底。リスクを最小限に。</div>
+        </div>
+        <div class="merit-card brand-card">
+          <div class="merit-card-icon">💼</div>
+          <div class="merit-card-title">柔軟な報酬設計</div>
+          <div class="merit-card-desc">成果報酬型・固定型・ハイブリッド型など、商材特性に合わせた最適なプランをご提案。</div>
+        </div>
+        <div class="merit-card brand-card">
+          <div class="merit-card-icon">🚀</div>
+          <div class="merit-card-title">TikTok Shop特化のノウハウ</div>
+          <div class="merit-card-desc">TikTok Shopエコシステムに精通した運営チームが、貴社の売上最大化を支援。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== BRANDS ============== -->
+<section class="brands" id="brands">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <span class="section-label">BRANDS</span>
+      <h2 class="section-title">提携ブランド</h2>
+      <p class="section-sub" style="margin: 0 auto;">業界トップクラスのD2Cブランドが、SocialRocketに参画しています。</p>
+    </div>
+
+    <div class="brands-grid">
+      <div class="brand-card-item reveal">
+        <div class="brand-name">Telesa</div>
+        <div class="brand-tag">ヘアケア・スキンケア</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">ekam</div>
+        <div class="brand-tag">日本発メンズスキンケア</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">BULK HOMME</div>
+        <div class="brand-tag">メンズスキンケア</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">NIグルーミング<br>おじさん</div>
+        <div class="brand-tag">大人のニオイケア</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">Feel Health<br>CHiPS</div>
+        <div class="brand-tag">健康おつまみ</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">issin</div>
+        <div class="brand-tag">スマートヘルスケア</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">ohora</div>
+        <div class="brand-tag">韓国No.1ネイルブランド</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">海底捞火锅</div>
+        <div class="brand-tag">世界No.1火鍋ブランド</div>
+      </div>
+    </div>
+
+    <p class="brands-note">※ 順不同・敬称略 / さらに新規ブランドも続々参画予定</p>
+  </div>
+</section>
+
+<!-- ============== FLOW ============== -->
+<section class="flow" id="flow">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <span class="section-label">FLOW</span>
+      <h2 class="section-title">参加の流れ</h2>
+      <p class="section-sub" style="margin: 0 auto;">SocialRocket MCNへの提携から、商品紹介まで。</p>
+    </div>
+
+    <!-- STAGE 1: MCN提携 -->
+    <div class="flow-stage reveal">
+      <div class="flow-stage-header">
+        <span class="flow-stage-badge">STAGE 1</span>
+        <h3 class="flow-stage-title">🤝 SocialRocket MCNに提携する</h3>
+        <p class="flow-stage-sub">まずはクリエイターとして、SocialRocketのメンバーになりましょう。</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-title">エントリー</div>
+          <div class="flow-step-desc">公式フォームまたはDMからエントリー。基本情報・TikTokアカウントを共有。</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-title">面談・審査</div>
+          <div class="flow-step-desc">運営チームと簡単な面談を実施。発信ジャンルや活動方針をすり合わせ。</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-title">契約締結</div>
+          <div class="flow-step-desc">条件にご納得いただけたら、MCN提携契約を締結。</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">4</div>
+          <div class="flow-step-title">MCN加入完了</div>
+          <div class="flow-step-desc">SocialRocketコミュニティに参加!限定情報へのアクセスがスタート🎉</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 矢印 -->
+    <div class="flow-connector">
+      <span class="flow-connector-line"></span>
+      <span class="flow-connector-icon">↓</span>
+      <span class="flow-connector-line"></span>
+    </div>
+
+    <!-- STAGE 2: 商品応募 -->
+    <div class="flow-stage stage-2 reveal">
+      <div class="flow-stage-header">
+        <span class="flow-stage-badge stage-2-badge">STAGE 2</span>
+        <h3 class="flow-stage-title">🎁 商品に応募して紹介する</h3>
+        <p class="flow-stage-sub">提携後は、好きな商品を選んで自由に応募・PR可能!</p>
+      </div>
+
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-step-num">1</div>
+          <div class="flow-step-title">フォーム記入・<br>商品を選ぶ</div>
+          <div class="flow-step-desc">専用フォームから、紹介したい商品を選んで応募してください。</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">2</div>
+          <div class="flow-step-title">応募する</div>
+          <div class="flow-step-desc">配送先住所・意気込みなどを入力して送信。</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">3</div>
+          <div class="flow-step-title">運営審査</div>
+          <div class="flow-step-desc">3〜5営業日以内に、運営チームよりご連絡を差し上げます。</div>
+        </div>
+        <div class="flow-step">
+          <div class="flow-step-num">4</div>
+          <div class="flow-step-title">商品受取・PR</div>
+          <div class="flow-step-desc">承認後、商品をお届け。あなたらしい発信で報酬を獲得!</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FAQ ============== -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="reveal" style="text-align: center;">
+      <span class="section-label">FAQ</span>
+      <h2 class="section-title">よくある質問</h2>
+      <p class="section-sub" style="margin: 0 auto;">クリエイター・ブランドの皆様からよくいただくご質問をまとめました。</p>
+    </div>
+
+    <div class="faq-list">
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">フォロワー数の最低条件はありますか?</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          明確な最低条件は設けていません。フォロワー数だけでなく、コンテンツの質、ジャンル、エンゲージメント率など総合的に審査いたします。1,000人未満の方でも、強い世界観をお持ちの方は積極的にご応募ください。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">TikTok Shopアカウントは必要ですか?</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          基本的にはTikTok Shopクリエイターとしての活動を推奨しています。Shopアカウント未開設の方も応募可能ですが、承認後にTikTok Shopクリエイター登録をお願いする場合があります。開設方法も運営チームがサポートします。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">報酬はどのように発生しますか?</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          各商品には「SocialRocket経由限定」の成果報酬が設定されています。あなたのリンク経由で発生した売上に応じて報酬が確定します。商品ごとに報酬率が異なりますので、応募フォームの商品詳細をご確認ください。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">複数の商品に応募できますか?</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          可能です。応募フォームでは複数商品をまとめて選択いただけます。ただし、商材理解の質を担保するため、一度にあまりに多くの商品を選ぶより、本当に興味のある数点に絞ることを推奨しています。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">応募から承認まで、どれくらい時間がかかりますか?</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          通常、3〜5営業日以内にご連絡いたします。応募内容の確認、TikTokアカウントの審査などを丁寧に行うため、お時間をいただいております。承認後は速やかに商品発送の手続きに移ります。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">必ず案内した商品を紹介しなければなりませんか?</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          無理な紹介は推奨していません。あなたのコンテンツの方向性に合わない商品は、率直にお伝えください。継続的な関係性を大切にしているため、お互いにとって良い案件のみをご提案します。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">【ブランド様向け】出品にはどんな条件がありますか?</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          TikTok Shopへの出品が完了している、または出品予定であることが基本条件です。商材ジャンル・価格帯・在庫状況などを総合的に判断し、ご提案させていただきます。詳細はお問い合わせください。
+        </div>
+      </details>
+
+      <details class="faq-item reveal">
+        <summary class="faq-question">
+          <span class="faq-q-icon">Q</span>
+          <span class="faq-q-text">【ブランド様向け】手数料・費用体系を教えてください</span>
+          <span class="faq-arrow">▼</span>
+        </summary>
+        <div class="faq-answer">
+          基本的に成果報酬型(レベニューシェア)を採用しており、初期費用・月額費用は発生しません。具体的な料率や条件は、商材・規模により個別にご提案します。お気軽にお問い合わせください。
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FINAL CTA ============== -->
+<section class="final-cta" id="contact">
+  <div class="final-cta-content container">
+    <h2>🚀 SocialRocketで、<br>新しい一歩を踏み出そう</h2>
+    <p>クリエイターの方も、ブランドの方も、まずはお気軽にお問い合わせください。</p>
+    <div class="final-cta-buttons">
+      <a href="https://tikseek-inc.github.io/socialrocket-form/" class="final-btn primary" target="_blank">
+        👤 クリエイター応募フォーム
+      </a>
+      <a href="mailto:info@tikseek.co?subject=SocialRocketに関するお問い合わせ" class="final-btn secondary">
+        🏢 ブランド様お問い合わせ
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============== FOOTER ============== -->
+<footer class="footer">
+  <div class="footer-logo">
+    <svg width="28" height="28" viewBox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 40 8 Q 32 4 28 10 Q 34 14 40 14 Q 46 14 52 10 Q 48 4 40 8 Z" fill="#6BCF7F" stroke="#FFF" stroke-width="2"/>
+      <circle cx="40" cy="44" r="26" fill="#5B3FF5" stroke="#FFF" stroke-width="2.5"/>
+      <circle cx="33" cy="42" r="5" fill="white"/>
+      <circle cx="47" cy="42" r="5" fill="white"/>
+      <circle cx="34" cy="43" r="2.2" fill="#2B1B5C"/>
+      <circle cx="48" cy="43" r="2.2" fill="#2B1B5C"/>
+      <path d="M 36 52 Q 40 56 44 52" stroke="#FFF" stroke-width="2" fill="none" stroke-linecap="round"/>
+    </svg>
+    SocialRocket
+  </div>
+  <div class="footer-info">
+    TikTok ShopクリエイターMCN
+  </div>
+  <div class="footer-info">
+    運営: <strong>株式会社TikSeek</strong>
+  </div>
+  <div class="footer-info">
+    お問い合わせ: <strong>info@tikseek.co</strong>
+  </div>
+  <div class="footer-links">
+    <a href="#about" class="footer-link">About</a>
+    <a href="#merit" class="footer-link">メリット</a>
+    <a href="#brands" class="footer-link">提携ブランド</a>
+    <a href="#flow" class="footer-link">参加の流れ</a>
+    <a href="#faq" class="footer-link">FAQ</a>
+    <a href="https://tikseek-inc.github.io/socialrocket-form/" class="footer-link" target="_blank">応募フォーム</a>
+  </div>
+  <div class="footer-copy">
+    © 2026 株式会社TikSeek / SocialRocket. All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+  // タブ切り替え
+  document.querySelectorAll('.merit-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      document.querySelectorAll('.merit-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.merit-content').forEach(c => c.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`[data-content="${target}"]`).classList.add('active');
+    });
+  });
+
+  // スクロールでフェードイン
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // 数字カウントアップアニメーション
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const target = entry.target;
+        const numEl = target.querySelector('.stat-counter');
+        const targetNum = parseInt(target.dataset.target, 10);
+        let current = 0;
+        const step = Math.max(1, Math.floor(targetNum / 40));
+        const interval = setInterval(() => {
+          current += step;
+          if (current >= targetNum) {
+            current = targetNum;
+            clearInterval(interval);
+          }
+          numEl.textContent = current;
+        }, 30);
+        statObserver.unobserve(target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-target]').forEach(el => statObserver.observe(el));
+</script>
+
+</body>
+</html>
