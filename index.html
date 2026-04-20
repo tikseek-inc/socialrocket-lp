@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SocialRocket | TikTok ShopクリエイターMCN</title>
-<meta name="description" content="SocialRocketは、TikTok Shopクリエイターの「好き」を仕事にするコマースクリエイターMCN。ブランドとクリエイターをつなぎ、新しいコマース体験を創ります。">
+<meta name="description" content="SocialRocketは、TikTok Shopクリエイターの「好き」を仕事にするコマースクリエイターMCNです。ブランドとクリエイターをつなぎ、新しいコマース体験を創ります。">
 <meta property="og:title" content="SocialRocket | TikTok ShopクリエイターMCN">
 <meta property="og:description" content="TikTok Shopクリエイターの「好き」を仕事に。話題のブランドと組んで自由にPR、報酬を獲得。">
 <meta property="og:type" content="website">
@@ -358,6 +358,163 @@
     color: var(--brand-purple-dark);
     font-weight: 700;
     position: relative; z-index: 2;
+  }
+
+   /* Founder Card */
+  .founder-card {
+    background: var(--white);
+    border: var(--border-dark);
+    border-radius: 24px;
+    padding: 32px 28px;
+    text-align: center;
+    box-shadow: var(--shadow-brand);
+    position: relative;
+    overflow: hidden;
+  }
+ 
+  .founder-card::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 120px; height: 120px;
+    background: var(--brand-yellow);
+    border-radius: 50%;
+    opacity: 0.3;
+  }
+ 
+  .founder-card::after {
+    content: '';
+    position: absolute;
+    bottom: -50px; left: -50px;
+    width: 130px; height: 130px;
+    background: var(--brand-pink);
+    border-radius: 50%;
+    opacity: 0.2;
+  }
+ 
+  .founder-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: var(--brand-purple);
+    color: var(--white);
+    padding: 4px 14px;
+    border-radius: 999px;
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    border: 2px solid var(--text-dark);
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+    letter-spacing: 0.05em;
+  }
+ 
+  .founder-badge-icon {
+    font-size: 0.85rem;
+  }
+ 
+  .founder-avatar {
+    width: 96px;
+    height: 96px;
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-light) 100%);
+    border: var(--border-dark);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 14px;
+    box-shadow: var(--shadow-brand-sm);
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+  }
+ 
+  .founder-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+ 
+  .founder-initial {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--white);
+    line-height: 1;
+  }
+ 
+  .founder-name {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-weight: 900;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+    position: relative;
+    z-index: 2;
+  }
+ 
+  .founder-title {
+    font-size: 0.85rem;
+    color: var(--brand-purple-dark);
+    font-weight: 900;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
+ 
+  .founder-divider {
+    width: 60%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--text-dark) 0 6px, transparent 6px 12px);
+    margin: 0 auto 18px;
+    position: relative;
+    z-index: 2;
+  }
+ 
+  .founder-credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    margin-bottom: 18px;
+    position: relative;
+    z-index: 2;
+  }
+ 
+  .founder-cred-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg-lavender);
+    padding: 8px 14px;
+    border-radius: 10px;
+    font-size: 0.82rem;
+    color: var(--text-dark);
+    font-weight: 700;
+  }
+ 
+  .founder-cred-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+ 
+  .founder-cred-text {
+    flex: 1;
+  }
+ 
+  .founder-quote {
+    background: var(--text-dark);
+    color: var(--white);
+    padding: 14px 18px;
+    border-radius: 14px;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.7;
+    position: relative;
+    z-index: 2;
+    font-style: italic;
   }
 
   /* ============== STATS ============== */
@@ -1035,10 +1192,10 @@
         <span class="section-label">ABOUT</span>
         <h2 class="section-title">SocialRocketとは?</h2>
         <p style="margin-bottom: 16px; color: var(--text-medium); line-height: 1.9;">
-          <strong style="color: var(--text-dark);">SocialRocket</strong>は、株式会社TikSeekが運営する<strong style="color: var(--brand-purple-dark);">TikTok ShopクリエイターMCN</strong>。
+          <strong style="color: var(--text-dark);">SocialRocket</strong>は、株式会社TikSeekが運営する<strong style="color: var(--brand-purple-dark);">TikTok ShopクリエイターMCNです</strong>。
         </p>
         <p style="margin-bottom: 16px; color: var(--text-medium); line-height: 1.9;">
-          話題のブランドと選ばれたクリエイターをマッチングし、<br>
+          TikTok Shopトップクリエイター「Jayの視点」を起点に、選ばれたクリエイターと話題のブランドをマッチングし、<br>
           双方にとって持続可能なコマース体験を創造します。
         </p>
         <p style="color: var(--text-medium); line-height: 1.9;">
@@ -1088,7 +1245,7 @@
       </div>
       <div class="stat-card reveal">
         <div class="stat-number" data-target="100"><span class="stat-counter">0</span><span class="stat-suffix">+</span></div>
-        <div class="stat-label">所属クリエイター</div>
+        <div class="stat-label">提携クリエイター</div>
         <div class="stat-desc">フォロワー1,000人〜10万人以上が活躍中</div>
       </div>
     </div>
@@ -1192,6 +1349,14 @@
 
     <div class="brands-grid">
       <div class="brand-card-item reveal">
+        <div class="brand-name">ohora</div>
+        <div class="brand-tag">韓国No.1ネイルブランド</div>
+      </div>
+      <div class="brand-card-item reveal">
+        <div class="brand-name">海底捞火锅</div>
+        <div class="brand-tag">世界No.1火鍋ブランド</div>
+      </div>
+      <div class="brand-card-item reveal">
         <div class="brand-name">Telesa</div>
         <div class="brand-tag">ヘアケア・スキンケア</div>
       </div>
@@ -1204,24 +1369,16 @@
         <div class="brand-tag">メンズスキンケア</div>
       </div>
       <div class="brand-card-item reveal">
-        <div class="brand-name">NIグルーミング<br>おじさん</div>
+        <div class="brand-name">NI BODY MIST</div>
         <div class="brand-tag">大人のニオイケア</div>
       </div>
       <div class="brand-card-item reveal">
-        <div class="brand-name">Feel Health<br>CHiPS</div>
+        <div class="brand-name">Feel Health CHiPS</div>
         <div class="brand-tag">健康おつまみ</div>
       </div>
       <div class="brand-card-item reveal">
         <div class="brand-name">issin</div>
         <div class="brand-tag">スマートヘルスケア</div>
-      </div>
-      <div class="brand-card-item reveal">
-        <div class="brand-name">ohora</div>
-        <div class="brand-tag">韓国No.1ネイルブランド</div>
-      </div>
-      <div class="brand-card-item reveal">
-        <div class="brand-name">海底捞火锅</div>
-        <div class="brand-tag">世界No.1火鍋ブランド</div>
       </div>
     </div>
 
@@ -1259,7 +1416,7 @@
         </div>
         <div class="flow-step">
           <div class="flow-step-num">3</div>
-          <div class="flow-step-title">契約締結</div>
+          <div class="flow-step-title">提携締結</div>
           <div class="flow-step-desc">条件にご納得いただけたら、MCN提携契約を締結。</div>
         </div>
         <div class="flow-step">
@@ -1416,7 +1573,7 @@
 <section class="final-cta" id="contact">
   <div class="final-cta-content container">
     <h2>🚀 SocialRocketで、<br>新しい一歩を踏み出そう</h2>
-    <p>クリエイターの方も、ブランドの方も、まずはお気軽にお問い合わせください。</p>
+    <p>クリエイター・ブランド問わず、まずはお気軽にお問い合わせください。</p>
     <div class="final-cta-buttons">
       <a href="https://tikseek-inc.github.io/socialrocket-form/" class="final-btn primary" target="_blank">
         👤 クリエイター応募フォーム
